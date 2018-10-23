@@ -1,4 +1,5 @@
 import { loadBoards } from "../data/boardsData.js";
+import { initialPinView } from "../components/pins.js";
 
 const bindEvents = () => {
   $("#user-boards").on("click", ".board-card", e => {
@@ -7,6 +8,7 @@ const bindEvents = () => {
       .attr("id");
     $("#boards-page").hide();
     $("#pins-page").show();
+    initialPinView(clickedBoardId);
   });
 };
 
